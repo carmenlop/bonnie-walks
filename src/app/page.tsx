@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll bg-red-500">
       <div className="w-full flex flex-col gap-[12px] p-[16px]">
-        <div className="text-white text-3xl font-bold flex justify-center w-full py-[24px]">Bonnie's Walks</div>
+        <div className="text-white text-3xl font-bold flex justify-center w-full py-[24px]">Bonnie{"'"}s Walks</div>
         <div className="flex flex-row justify-between items-center px-[16px]">
           <Image src='/bonnie.png' width={150} height={150} alt="dog head" className="bg-red-600 rounded-full px-[30px] py-[15px]"/>
           <div className="flex flex-col justify-center items-center bg-red-600 text-white rounded-full w-[150px] h-[150px]">
