@@ -51,6 +51,11 @@ export default function Home() {
     setTotalTime(`${hours}h ${minutes}m`)
     if (allWalks[0]?.end === null) {
       setOnWalk(true)
+      if (photo === '/bonnie-reverse.png') {
+        setPhoto('/bonnie.png')
+      } else {
+        setPhoto('/bonnie-reverse.png')
+      }
     }
   }, [allWalks])
 
@@ -59,13 +64,15 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      if (photo === '/bonnie-reverse.png') {
-        setPhoto('/bonnie.png')
-      } else {
-        setPhoto('/bonnie-reverse.png')
-      }
-    }, 700)
+    if (onWalk) {
+      setTimeout(() => {
+        if (photo === '/bonnie-reverse.png') {
+          setPhoto('/bonnie.png')
+        } else {
+          setPhoto('/bonnie-reverse.png')
+        }
+      }, 700)
+    }
   }, [photo])
   return (
     <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll bg-red-500">
