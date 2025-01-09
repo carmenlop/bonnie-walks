@@ -22,7 +22,7 @@ export default function Home() {
   const [onWalk, setOnWalk] = useState<boolean>(false)
 
   const getAllWalks = async () => {
-    const {data, error} = await getWalks()
+    const {data} = await getWalks()
     console.log(data, 'second')
     if (data) {
       setAllWalks(data)
@@ -30,14 +30,14 @@ export default function Home() {
   }
 
   const startWalk = async () => {
-    const {data, error} = await createWalk()
+    const {data} = await createWalk()
     if (data) {
       getAllWalks();
     }
   }
 
   const finishWalk = async () => {
-    const {data, error} = await endWalk()
+    const {data} = await endWalk()
     if (data) {
       setOnWalk(false)
       getAllWalks()
@@ -119,36 +119,6 @@ export default function Home() {
                 </tr>
               )
             })}
-            {/* <tr>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">1/6/25</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">8:25</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:00</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">35m</td>
-            </tr>
-            <tr>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">1/5/25</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">8:40</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:15</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">35m</td>
-            </tr>
-            <tr>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">1/4/25</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:00</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:15</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">15m</td>
-            </tr>
-            <tr>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">1/3/25</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:00</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:15</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">15m</td>
-            </tr>
-            <tr>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">1/2/25</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:00</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">9:15</td>
-              <td className="border border-red-700 text-center text-md text-white font-bold py-[6px]">15m</td>
-            </tr> */}
           </tbody>
         </table>
       </div>
